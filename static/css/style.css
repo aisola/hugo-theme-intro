@@ -1,4 +1,9 @@
 
+
+.hero .tabs a {
+    font-size: 1.5em;
+}
+
 .home-squeeze {
     margin: 0 auto;
     width: 60%;

@@ -2,18 +2,24 @@
 <footer class="footer">
     <div class="container">
 	<div class="content has-text-centered">
+	    {{ partial "social.html" . }}
 	    <p class="page-meta">
 		Last modified: {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
 	    </p>
-	    <p>	Copyright &copy; 2017, Abram C. Isola. All rights reserved.</p>
+	    <p>	Copyright &copy; {{ .Now.Format "2006" }}, {{ .Site.Title }}. All rights reserved.</p>
+	    <p>
+		Website generated with <a href="https://gohugo.io/" target="_blank">Hugo</a>
+		using the <a href="https://github.com/aisola/hugo-intro" target="_blank">Intro</a>
+		theme by <a href="https://abramisola.com">Abram C. Isola</a>.
+	    </p>
 	    <p>
 		Unless otherwise specified, all code snippits on this website are
 		licensed under the permissive <a href="http://opensource.org/licenses/mit-license.php">MIT</a> license.
 	    </p>
 	    <p>
-		<a class="icon" href="https://github.com/aisola">
-		    <i class="fa fa-github"></i>
-		</a>
+		<a href="#">Terms of Use</a> &mdash;
+		<a href="#">Privacy Policy</a> &mdash;
+		<a href="#">DMCA Policy</a>
 	    </p>
 	</div>
     </div>

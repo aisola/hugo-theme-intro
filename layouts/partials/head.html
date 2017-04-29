@@ -10,10 +10,10 @@
 
     <!-- Icon -->
     <link rel="shortcut icon"
-	  {{ if .Site.Params.faviconfile }}
-	  href="/{{ .Site.Params.faviconfile }}"
+	  {{ if .Site.Params.favicon }}
+	  href="{{ .Site.Params.favicon }}"
 	  {{ else }}
-	  href="/img/favicon.ico"
+	  href="/images/favicon.ico"
 	  {{ end }}
 	  >
 

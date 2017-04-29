@@ -1,52 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-{{ partial "head.html" . }}
-<body>
-    {{- partial "notification.html" . }}
-
-    <section class="hero is-info is-fullheight" id="hero">
-	<div class="hero-header is-hidden-tablet">
-	    <nav class="nav">
-		<div class="container">
-		    <div class="nav-left">
-			<a href="{{ .Site.BaseURL }}" class="nav-item">
-			    <h1 class="title is-3">{{ .Title }}</h1>
-			</a>
-		    </div>
-		    <span class="nav-toggle" data-target="#main-menu">
-			<span></span>
-			<span></span>
-			<span></span>
-		    </span>
-		    <div class="nav-right nav-menu" id="main-menu">
-			<a href="/#about" class="nav-item">About</a>
-			<a href="/#projects" class="nav-item">Projects</a>
-			<a href="/#articles" class="nav-item">Articles</a>
-			<a href="/#contact" class="nav-item">Contact</a>
-		    </div>
-		</div>
-	    </nav>
-	</div>
-	<div class="hero-body">
-            <div class="container has-text-centered">
-		<h1 class="title is-1 is-hidden-mobile">{{ .Title }}</h1>
-		<h3 class="subtitle is-4">{{ .Site.Params.subtitle }}</h3>
-            </div>
-	</div>
-	<div class="hero-foot is-hidden-mobile">
-	    <nav class="tabs is-boxed is-fullwidth">
-		<div class="container">
-		    <ul>
-			<li><a href="#about">About</a></li>
-			<li><a href="#projects">Projects</a></li>
-			<li><a href="#articles">Articles</a></li>
-			<li><a href="#contact">Contact</a></li>
-		    </ul>
-		</div>
-	    </nav>
-	</div>
-    </section>
+{{ partial "header.html" . }}
 
     <section class="section section-bordered" id="about">
 	<div class="container">
@@ -80,6 +32,10 @@
 		{{- range first 1 (where .Data.Pages.ByPublishDate "Section" "article") }}
 		{{- partial "article.html" . }}
 		{{- end }}
+	    </div>
+
+	    <div class="home-sqeeze has-text-centered">
+		<a class="button is-info is-medium" href="{{ .Site.BaseURL }}/article/">Browse All Articles</a>
 	    </div>
 	</div>
     </section>

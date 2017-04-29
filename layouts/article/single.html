@@ -1,17 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-    {{ partial "head.html" . }}
-    <body>
-	{{ partial "notification.html" . }}
-
-	<section class="hero is-info is-medium">
-	    {{- partial "header-hero.html" . }}
-	    <div class="hero-body has-text-centered">
-		<h1 class="title is-1 is-spaced">{{ .Title }}</h1>
-		<p class="subtitle is-4">{{ .Params.author }} &mdash; {{ .Date.Format "Monday, Jan 2, 2006" }}</p>
-	    </div>
-	</section>
+{{ partial "header.html" . }}
 
 	<section class="section">
 	    <div class="container">
