@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
+<body>
+    {{- partial "notification.html" . }}
+
+    <section class="hero is-info is-fullheight" id="hero">
+	<div class="hero-header is-hidden-tablet">
+	    <nav class="nav">
+		<div class="container">
+		    <div class="nav-left">
+			<a href="{{ .Site.BaseURL }}" class="nav-item">
+			    <h1 class="title is-3">{{ .Title }}</h1>
+			</a>
+		    </div>
+		    <span class="nav-toggle" data-target="#main-menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		    </span>
+		    <div class="nav-right nav-menu" id="main-menu">
+			<a href="/#about" class="nav-item">About</a>
+			<a href="/#projects" class="nav-item">Projects</a>
+			<a href="/#articles" class="nav-item">Articles</a>
+			<a href="/#contact" class="nav-item">Contact</a>
+		    </div>
+		</div>
+	    </nav>
+	</div>
+	<div class="hero-body">
+            <div class="container has-text-centered">
+		<h1 class="title is-1 is-hidden-mobile">{{ .Title }}</h1>
+		<h3 class="subtitle is-4">{{ .Site.Params.subtitle }}</h3>
+            </div>
+	</div>
+	<div class="hero-foot is-hidden-mobile">
+	    <nav class="tabs is-boxed is-fullwidth">
+		<div class="container">
+		    <ul>
+			<li><a href="#about">About</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#articles">Articles</a></li>
+			<li><a href="#contact">Contact</a></li>
+		    </ul>
+		</div>
+	    </nav>
+	</div>
+    </section>
+
+    <section class="section section-bordered" id="about">
+	<div class="container">
+	    <h3 class="title is-2 has-text-centered">About</h3>
+
+	    <div class="columns">
+		<div class="column is-one-third has-text-centered">
+		    <img class="img-responsive" src="{{ .Site.Params.avatar }}" alt="Me" />
+		</div>
+
+		<div class="column content">
+		    {{- range first 1 (where .Data.Pages "Title" "about") }}
+		    {{ .Content }}
+		    {{- end }}
+		</div>
+	    </div>
+	</div>
+    </section>
+
+    <section class="section section-bordered" id="projects">
+	<div class="container">
+	    <h3 class="title is-2 has-text-centered">Projects</h3>
+	    {{ partial "projects.html" . }}
+	</div>
+    </section>
+
+    <section class="section section-bordered" id="articles">
+	<div class="container">
+	    <h3 class="title is-2 has-text-centered">Latest Article</h3>
+	    <div class="home-squeeze">
+		{{- range first 1 (where .Data.Pages.ByPublishDate "Section" "article") }}
+		{{- partial "article.html" . }}
+		{{- end }}
+	    </div>
+	</div>
+    </section>
+
+    <section class="section" id="contact">
+	<div class="container contact-home">
+	    <h3 class="title is-2 has-text-centered">Contact</h3>
+	    <div class="content is-medium">
+		{{- range first 1 (where .Data.Pages "Title" "contact") }}
+		{{ .Content }}
+		{{- end }}
+	    </div>
+	</div>
+    </section>
+
+{{- partial "footer.html" . }}

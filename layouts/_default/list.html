@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+
+<section class="section">
+    <div class="container">
+	<div class="columns">
+	    <div class="column is-three-quarters has-sidebar">
+		{{- range .Data.Pages }}
+		{{ if eq .Type "article" }}
+		{{ partial "article.html" . }}
+		{{ end }}
+		{{- end }}
+	    </div>
+	    <div class="column is-one-quarter">
+		{{ partial "sidebar.html" . }}
+	    </div>
+    </div>
+</section>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,6 @@
+
+{{ if .Site.Params.notification }}
+<div class="notification has-text-centered is-{{ .Site.Params.notificationStyle }} notification-headline{{ if .IsHome }} notification-home{{ end }}">
+    {{ .Site.Params.notification |safeHTML }}
+</div>
+{{ end }}

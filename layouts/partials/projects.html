@@ -1,0 +1,8 @@
+
+<div class="columns is-multiline">
+
+    {{- range .Site.Params.projects }}
+        {{ partial "project.html" . }}
+    {{- end }}
+
+</div>

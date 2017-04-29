@@ -1,0 +1,28 @@
+
+<div class="widget widget-search">
+    <h3 class="widget-title has-text-centered title is-4">Can't find what you're looking for?</h3>
+    <p class="widget-content control has-icons-left has-icons-right">
+	<input class="input" type="text" placeholder="Search" />
+	<span class="icon is-small is-left">
+	    <i class="fa fa-search"></i>
+	</span>
+    </p>
+</div>
+
+<div class="widget widget-categories">
+    <h3 class="widget-title has-text-centered title is-4">Categories</h3>
+    <ul>
+        {{ range $key, $taxonomy := .Site.Taxonomies.categories }}
+        <li><a href="/categories/{{ $key }}">{{ humanize $key }}</a></li>
+        {{ end }}
+    </ul>
+</div>
+
+<div class="widget widget-tags">
+    <h3 class="widget-title has-text-centered title is-4">Tags</h3>
+    <ul>
+        {{ range $key, $taxonomy := .Site.Taxonomies.tags }}
+        <li><a href="/tags/{{ $key }}">{{ humanize $key }}</a></li>
+        {{ end }}
+    </ul>
+</div>

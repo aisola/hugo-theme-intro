@@ -1,0 +1,45 @@
+
+.home-squeeze {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.notification-headline {
+    margin: 0 !important;
+}
+
+.notification-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.has-sidebar {
+    padding-right: 4em;
+}
+
+.has-sidebar article {
+    margin: 2em auto;
+}
+
+.contact-home {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.section-bordered {
+    border-bottom: 1px solid #00d1b2;
+}
+
+.widget {
+    margin: 1.5em auto;
+}
+
+.widget:first-child {
+    margin-top: 0;
+}
+
+.widget:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,14 @@
+
+<article class="article article-{{ .UniqueID }}">
+    <h4 class="article-title title is-3 is-spaced">
+	<a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h4>
+    <div class="article-meta subtitle is-5">
+	{{ .Params.author }} &mdash;
+	{{ .Date.Format "Monday, Jan 2, 2006" }}
+    </div>
+    <div class="content">
+	{{ .Summary }}
+	{{- if .Truncated }}... <a href="{{ .Permalink }}">Read More</a>{{- end }}
+    </div>
+</article>
